@@ -54,10 +54,11 @@ body
 
 .btn
 	display: inline-block
-	padding: 15px
+	padding: 15px 25px
 	text-transform: uppercase
 	color: $active
 	border: 1px solid $active
+	border-radius: 1px
 	font-size: 16px
 	font-family: hammersmith
 	transition: all .3s ease
@@ -108,7 +109,7 @@ body
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover
     background-color: transparent
 
-section
+section, footer
 	position: relative
 	background-color: $dark
 	color: $accent
@@ -267,8 +268,70 @@ section
 			width: 100%
 			text-align: center
 			margin-top: 60px
-				
+	&-testimonials
+		background-image: url("../img/bg-testimonials.jpg")
+		padding-bottom: 200px
+		.testimonials-title
+			font-size: 100px
+			text-align: center
+		.testimonals-carousel
+			text-align: center
+			.item
+				.testimonals-item-text
+					font-family: playfair
+					font-size: 16px
+				.testimonals-item-name
+					margin-top: 50px
+					font-weight: 900
+				.testimonals-item-position
+					font-weight: 300
+					font-size: 13px
+					letter-spacing: 0
+		.carousel-indicators
+			bottom: -120px
+			li
+				width: 45px
+				height: 45px
+				border-radius: 50%
+				margin: 0 10px
+				background-position: center
+				background-size: cover
+				transition: transform .5s ease
+				&.active
+					transform: scale(1.5)
+				&.carousel-testimonials-indicator-1
+					background-image: url('../img/testimonals/photo1.png')
+				&.carousel-testimonials-indicator-2
+					background-image: url('../img/testimonals/photo2.png')				
+				&.carousel-testimonials-indicator-3
+					background-image: url('../img/testimonals/photo3.png')
+				&.carousel-testimonials-indicator-4
+					background-image: url('../img/testimonals/photo4.png')
+				&.carousel-testimonials-indicator-5
+					background-image: url('../img/testimonals/photo5.png')	
+	&-contact
+		.contact-form
+			& > input, & > textarea
+				padding: 20px
+				margin-top: 25px
+			.form-control
+				border-radius: 0
+			.btn
+				margin-top: 25px	
+		.contact-partner-container
+			font-size: 0
+			.contact-partner-item
+				display: inline-block
+				width: 49%
+				padding: 20px
+				box-sizing: border-box
+				text-align: center
+				img
+					margin: 0 auto
 
+.footer-main
+	background-image: url("../img/bg-footer.jpg")
+	font-weight: 300
 
 
 				
