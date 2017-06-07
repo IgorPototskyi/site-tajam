@@ -1,0 +1,284 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 14px
+	min-width: 600px
+	min-height: 600px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	font-weight: 300
+	letter-spacing: 1px
+	overflow-x: hidden
+	opacity: 1
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.uppercase
+	text-transform: uppercase
+
+.container-fh, .container-fh .row,  .container-fh .column
+	position: relative
+	height: 100%
+
+.btn
+	display: inline-block
+	padding: 15px
+	text-transform: uppercase
+	color: $active
+	border: 1px solid $active
+	font-size: 16px
+	font-family: hammersmith
+	transition: all .3s ease
+
+.title
+	font-family: playfair
+	font-weight: bold
+	font-size: 22px
+	text-transform: uppercase
+
+.title-line
+	font-family: playfair		
+	&::after
+		content: ''
+		display: block
+		width: 50px
+		height: 2px
+		background: $gray
+		margin: 20px auto
+
+.header-top 
+	position: absolute
+	width: 100%
+	z-index: 1
+	.navbar
+		margin-top: 10px
+		background-color: transparent
+		border: none
+		a
+			text-decoration: none
+			transition: all .3s ease
+		&-header
+			.nav-logo
+				display: inline-block
+				font-size: 30px
+				font-weight: 100
+				color: $active
+		&-menu
+			font-size: 13px
+			font-weight: 900
+			li
+				a
+					color: $accent
+			li.active
+				a
+					color: $active
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover
+    background-color: transparent
+
+section
+	position: relative
+	background-color: $dark
+	color: $accent
+	background-position: center
+	background-size: cover
+	background-repeat: no-repeat
+	padding: 60px 0
+	
+	&.inverse
+		background-color: $accent
+		color: $main-dark
+
+	&.overlay
+		&::before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background-color: rgba($overlay, .85)			
+
+.s
+	&-welcome
+		// height: 100vh
+		height: 670px
+		background-image: url("../img/bg-welcome.jpg")
+		.welcome-container
+			position: relative
+			height: 100%
+			.welcome-carousel
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				text-align: center
+				height: 300px
+				.welcome-item-title
+					font-size: 32px
+					// font-family: playfair
+					font-weight: 900
+					&::after
+						background: $active
+				.welcome-item-link
+					margin: 20px 0
+				.carousel-indicators
+					bottom: -150px
+	&-textstory
+		.textstory-logo
+			margin-top: 25px
+		.textstory-container
+			> p, > a
+				margin-top: 25px
+	&-videostory
+		height: 550px
+		background-image: url("../img/bg-videostory.jpg")
+		.videostory-video
+			display: none
+		.videostory-container
+			width: 100%
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			text-align: center
+			.videostory-button
+				display: inline-block
+				width: 90px
+				height: 90px
+				font-size: 40px
+				padding: 5px 0 0 5px
+				border: 5px solid $accent
+				border-radius: 50%
+				transition: all .3s ease
+				&:hover
+					color: $main-dark
+					border: 5px solid $main-dark
+			.videostory-title
+				margin-top: 10px
+				font-weight: 900
+				font-size: 16px
+	&-expertise
+		.expertise-title
+			width: 100%
+			text-align: center
+			&-descr
+				color: $dark
+		.container
+			.row:first-child
+				border-bottom: 1px solid #ebebeb
+			.expertise-item
+				padding: 50px 20px
+				text-align: center
+				&-title
+					margin-top: 30px
+					font-weight: 900
+					text-transform: uppercase
+				&-descr
+					margin-top: 20px
+					color: $dark
+					font-weight: 300
+	&-team
+		background-image: url("../img/bg-team.jpg")
+		.team-title
+			position: relative
+			width: 100%
+			text-align: center
+			letter-spacing: 1px
+		.container
+			.team-item
+				padding: 30px 0
+				text-align: center
+				border-bottom: 1px solid $gray
+				&-img
+					// 
+					width: 100%
+					padding: 5px
+					img
+						margin: 0 auto
+				&-name
+					font-weight: 900
+					margin-top: 10px
+				&-position
+					font-weight: 300
+					font-size: 13px
+					color: #fafafa
+					letter-spacing: 0
+		.team-footer
+			position: relative
+			width: 100%
+			text-align: center
+			margin-top: 60px
+			&-text
+				font-weight: 300
+			&-btn
+				margin-top: 25px
+	&-works
+		.works-title
+			&-link
+				display: inline-block
+				float: right
+				color: $main-dark
+				font-weight: 300
+				padding-top: 8px
+				&::after
+					display: block
+					content: ''
+					clear: both
+		.works-container
+			position: relative
+			margin-top: 60px
+			display: flex
+			flex-flow: row wrap
+			justify-content: center
+			.works-img
+		.works-footer
+			position: relative
+			width: 100%
+			text-align: center
+			margin-top: 60px
+				
+
+
+
+				
+
+
+
+
+
+
+
+
+
+@import "media" // Всегда в конце

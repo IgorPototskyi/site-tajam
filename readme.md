@@ -1,0 +1,1 @@
+https://igorpototskyi.github.io/site-tajam/dist/
