@@ -18,20 +18,13 @@
 	color: #666
 	opacity: 1
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
-
 html, body
 	height: 100%
 
 body
 	font-size: 14px
-	min-width: 600px
-	min-height: 600px
+	// min-width: 600px
+	// min-height: 600px
 	position: relative
 	line-height: 1.75
 	font-family: $default-font
@@ -39,6 +32,12 @@ body
 	letter-spacing: 1px
 	overflow-x: hidden
 	opacity: 1
+
+	input:focus:required:invalid,
+	textarea:focus:required:invalid,
+	input:required:valid,
+	textarea:required:valid
+		color: #666
 
 .img-responsive
 	display: block
@@ -52,7 +51,7 @@ body
 	position: relative
 	height: 100%
 
-.btn
+.btn, .btn:visited
 	display: inline-block
 	padding: 15px 25px
 	text-transform: uppercase
@@ -62,6 +61,11 @@ body
 	font-size: 16px
 	font-family: hammersmith
 	transition: all .3s ease
+
+	&:hover
+		color: $hover
+		border: 1px solid  $hover
+
 
 .title
 	font-family: playfair
@@ -84,29 +88,47 @@ body
 	width: 100%
 	z-index: 1
 	.navbar
-		margin-top: 10px
+		padding: 5px 0
 		background-color: transparent
 		border: none
 		a
 			text-decoration: none
-			transition: all .3s ease
-		&-header
-			.nav-logo
-				display: inline-block
-				font-size: 30px
-				font-weight: 100
-				color: $active
+
 		&-menu
 			font-size: 13px
 			font-weight: 900
-			li
-				a
-					color: $accent
-			li.active
-				a
-					color: $active
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover
+.nav-logo
+	display: inline-block
+	font-size: 30px
+	font-weight: 100
+	color: $active
+	&:hover
+		color: $active
+		text-decoration: none
+
+.navbar-nav
+	li, li.active
+		padding-top: 4px
+		a
+			color: $accent
+			transition: color .3s ease
+			&:hover, &:active, &:focus
+				color: $active
+				background-color: transparent
+
+.navbar-toggle
+	border: 1px solid $active
+	transition: all .3s ease
+	&:hover
+		background-color: rgba($overlay, .85)
+
+	span
+		background-color: $active
+
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:focus, 
+.navbar-default .navbar-nav>.active>a:hover
     background-color: transparent
 
 section, footer
@@ -134,70 +156,92 @@ section, footer
 
 .s
 	&-welcome
-		// height: 100vh
-		height: 670px
+		height: 100vh
+		// height: 670px
 		background-image: url("../img/bg-welcome.jpg")
-		.welcome-container
+
+		.welcome-carousel
 			position: relative
 			height: 100%
-			.welcome-carousel
-				position: absolute
-				top: 50%
-				transform: translateY(-50%)
-				text-align: center
-				height: 300px
-				.welcome-item-title
-					font-size: 32px
-					// font-family: playfair
-					font-weight: 900
-					&::after
-						background: $active
-				.welcome-item-link
-					margin: 20px 0
-				.carousel-indicators
-					bottom: -150px
+			// position: absolute
+			// top: 50%
+			// transform: translateY(-50%)
+			text-align: center
+			// height: 300px
+
+		.carousel-indicators
+			bottom: 20px
+			li.active
+				transition: background-color .3s ease
+				background-color: $active
+
+		.welcome-carousel-container
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+
+			.welcome-item-title
+				font-size: 32px
+				font-weight: 900
+				&::after
+					background: $active
+
+			.welcome-item-link
+				margin: 20px 0
+
+
+
 	&-textstory
 		.textstory-logo
 			margin-top: 25px
+
 		.textstory-container
 			> p, > a
 				margin-top: 25px
+
 	&-videostory
 		height: 550px
 		background-image: url("../img/bg-videostory.jpg")
+
 		.videostory-video
 			display: none
+
 		.videostory-container
 			width: 100%
 			position: absolute
 			top: 50%
 			transform: translateY(-50%)
 			text-align: center
-			.videostory-button
-				display: inline-block
-				width: 90px
-				height: 90px
-				font-size: 40px
-				padding: 5px 0 0 5px
-				border: 5px solid $accent
-				border-radius: 50%
-				transition: all .3s ease
-				&:hover
-					color: $main-dark
-					border: 5px solid $main-dark
-			.videostory-title
-				margin-top: 10px
-				font-weight: 900
-				font-size: 16px
+
+		.videostory-button
+			display: inline-block
+			width: 90px
+			height: 90px
+			font-size: 40px
+			padding: 5px 0 0 5px
+			border: 5px solid $accent
+			border-radius: 50%
+			transition: all .3s ease
+			&:hover
+				color: $hover
+				border: 5px solid $hover
+
+		.videostory-title
+			margin-top: 10px
+			font-weight: 900
+			font-size: 16px
+
 	&-expertise
 		.expertise-title
 			width: 100%
 			text-align: center
 			&-descr
 				color: $dark
+
 		.container
 			.row:first-child
 				border-bottom: 1px solid #ebebeb
+
 			.expertise-item
 				padding: 50px 20px
 				text-align: center
@@ -209,6 +253,7 @@ section, footer
 					margin-top: 20px
 					color: $dark
 					font-weight: 300
+
 	&-team
 		background-image: url("../img/bg-team.jpg")
 		.team-title
@@ -216,25 +261,31 @@ section, footer
 			width: 100%
 			text-align: center
 			letter-spacing: 1px
-		.container
-			.team-item
-				padding: 30px 0
-				text-align: center
-				border-bottom: 1px solid $gray
-				&-img
-					// 
-					width: 100%
-					padding: 5px
-					img
-						margin: 0 auto
-				&-name
-					font-weight: 900
-					margin-top: 10px
-				&-position
-					font-weight: 300
-					font-size: 13px
-					color: #fafafa
-					letter-spacing: 0
+
+		.team-item
+			padding: 30px 0
+			text-align: center
+			
+			&-img
+				width: 100%
+				img
+					margin: 0 auto
+
+			&-container
+				border: 1px solid $gray
+				width: 220px
+				margin: 0 auto
+				padding: 20px 0
+
+			&-name
+				font-weight: 900
+
+			&-position
+				font-weight: 300
+				font-size: 13px
+				color: #fafafa
+				letter-spacing: 0
+
 		.team-footer
 			position: relative
 			width: 100%
@@ -244,82 +295,101 @@ section, footer
 				font-weight: 300
 			&-btn
 				margin-top: 25px
+
 	&-works
-		.works-title
-			&-link
-				display: inline-block
-				float: right
-				color: $main-dark
-				font-weight: 300
-				padding-top: 8px
-				&::after
-					display: block
-					content: ''
-					clear: both
+		.works-title-link
+			display: inline-block
+			float: right
+			color: $main-dark
+			font-weight: 300
+			padding-top: 8px
+			&::after
+				display: block
+				content: ''
+				clear: both
+
 		.works-container
 			position: relative
 			margin-top: 60px
 			display: flex
 			flex-flow: row wrap
 			justify-content: center
-			.works-img
+		
 		.works-footer
 			position: relative
 			width: 100%
 			text-align: center
 			margin-top: 60px
+
 	&-testimonials
 		background-image: url("../img/bg-testimonials.jpg")
-		padding-bottom: 200px
-		.testimonials-title
+		height: 500px
+		padding: 20px 0
+
+		.testim-title
 			font-size: 100px
 			text-align: center
-		.testimonals-carousel
+			height: 140px
+
+		.testim-carousel
+			position: relative
+			height: 100%
 			text-align: center
-			.item
-				.testimonals-item-text
-					font-family: playfair
-					font-size: 16px
-				.testimonals-item-name
-					margin-top: 50px
-					font-weight: 900
-				.testimonals-item-position
-					font-weight: 300
-					font-size: 13px
-					letter-spacing: 0
+
+			.testim-item-text
+				font-family: playfair
+				font-size: 16px
+
+			.testim-item-name
+				margin-top: 50px
+				font-weight: 900
+
+			.testim-item-position
+				font-weight: 300
+				font-size: 13px
+				letter-spacing: 0
+
 		.carousel-indicators
-			bottom: -120px
+			bottom: 30px
 			li
 				width: 45px
 				height: 45px
 				border-radius: 50%
-				margin: 0 10px
+				margin: 0 8px
 				background-position: center
 				background-size: cover
 				transition: transform .5s ease
+
 				&.active
 					transform: scale(1.5)
-				&.carousel-testimonials-indicator-1
+
+				&.carousel-testim-indicator-1
 					background-image: url('../img/testimonals/photo1.png')
-				&.carousel-testimonials-indicator-2
+				&.carousel-testim-indicator-2
 					background-image: url('../img/testimonals/photo2.png')				
-				&.carousel-testimonials-indicator-3
+				&.carousel-testim-indicator-3
 					background-image: url('../img/testimonals/photo3.png')
-				&.carousel-testimonials-indicator-4
+				&.carousel-testim-indicator-4
 					background-image: url('../img/testimonals/photo4.png')
-				&.carousel-testimonials-indicator-5
+				&.carousel-testim-indicator-5
 					background-image: url('../img/testimonals/photo5.png')	
+
 	&-contact
 		.contact-form
 			& > input, & > textarea
 				padding: 20px
 				margin-top: 25px
+
 			.form-control
 				border-radius: 0
-			.btn
-				margin-top: 25px	
+
+			.btn, .btn:visited
+				margin-top: 25px
+				background-color: transparent	
+
 		.contact-partner-container
 			font-size: 0
+
 			.contact-partner-item
 				display: inline-block
 				width: 49%
@@ -332,16 +402,128 @@ section, footer
 .footer-main
 	background-image: url("../img/bg-footer.jpg")
 	font-weight: 300
+	letter-spacing: 0
+	.footer-text
+		margin-top: 20px	
+	
+	.footer-title
+		font-size: 15px
+		font-weight: 900
+		text-transform: uppercase
+		letter-spacing: 1px
+		margin-top: 10px
+
+	.footer-addr, .form-horizontal
+		margin-top: 40px
+
+	.footer-tel
+		margin-top: 20px
+
+	.footer-addr, .footer-tel
+		.fa
+			font-size: 20px
+			margin-right: 20px
+			float: left
+			padding-top: 3px
+		p
+			display: inline
+	
+	.form-horizontal
+		box-sizing: border-box
+		input, button
+			padding: 10px 15px
+			vertical-align: middle
+
+		input
+			background-color: transparent
+			border: 1px solid #9e98b0
+			width: 70%
+
+		button
+			width: 23%
+			margin-left: 5%
+			background-color: rgba($accent, .5)
+			border: none
+			transition: background-color .3s ease
+			&:hover
+				background-color: rgba($accent, .6)
+
+	.social
+		margin-top: 20px
+		ul
+			list-style-type: none
+			padding-left: 0
+			li
+				display: inline-block
+				border: 1px solid $accent
+				border-radius: 50%
+				text-align: center
+				margin: 3px
+				a
+					display: inline-block
+					width: 35px
+					height: 35px
+					line-height: 35px
+					font-size: 16px
+					color: $accent
+
+				&:hover
+					background-color: $hover
+
+	.footer-nav
+		font-weight: 400
+		margin-top: 50px
+
+		ul
+			list-style-type: none
+			margin: 0
+			padding: 0
+			li
+				display: inline-block
+				margin: 0 20px
+				a
+					text-decoration: none
+					color: $accent
+					transition: color .3s ease
+					&:hover
+						color: $hover
+
+				&:first-child
+					margin-left: 0
 
 
+			
+		.copyright
+			float: right
+			text-transform: none
+			margin: 0
 				
+				
+.top
+	position: fixed
+	bottom: 25px
+	right: -100px
+	width: 50px
+	height: 50px
+	z-index: 10
+	font-size: 26px
+	background-color: $accent
+	color: $active
+	border: 1px solid $active
+	border-radius: 50%
+	text-align: center
+	cursor: pointer
+	opacity: .5
+	transition: all .3s ease
+	&:hover
+		background-color: $accent
+		opacity: 1
+	&.active
+		right: 25px			
 
+		
 
-
-
-
-
-
-
+	
+				
 
 @import "media" // Всегда в конце

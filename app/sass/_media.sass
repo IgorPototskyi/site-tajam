@@ -9,15 +9,56 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-	/**/
+	.s
+		&-testimonials
+			.carousel-indicators
+				bottom: 0
+
+	.footer-main
+		.footer-title
+			text-align: center
+		.subscribe
+			margin-top: 40px
+
+		.social
+			ul
+				text-align: center
+
+
+			
+	// 	.form-horizontal
+	// 		input
+	// 			width: 100%
+	// 		button
+	// 			width: 50%
+	// 			margin: 10px 0 0
+
 
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
+	section
+		padding: 30px 0
+
 	.header-top 
 		.navbar
-			background-color: $main-dark
+			background-color: rgba($overlay, .95)
+		.navbar-nav
+			li
+				float: right
+				clear: right
+				margin-right: 80px
+				border-bottom: 1px solid $active
+				width: 33%
+				text-align: right
+				&:last-child
+					border-bottom: none
+
 	.s
+		&-welcome
+			.carousel-indicators
+				bottom: 0
+
 		&-textstory
 			padding: 50px
 			text-align: center
@@ -34,16 +75,62 @@
 						border-bottom: none
 		&-contact
 			.contact-partner-title
-				margin: 30px
+				margin: 30px 0
 			.contact-partner-title, .contact-form-title
 				width: 100%
 				text-align: center
+
+		&-testimonials
+			.testim-title
+				height: 110px
+				font-size: 80px
+
+			.carousel-indicators
+				li
+					width: 35px
+					height: 35px
+					margin: 0 5px
+
+	.footer-main
+		.footer-addr, .form-horizontal
+			margin-top: 20px
+		
+		.footer-title
+			margin-top: 30px
+		
+		.footer-nav
+			.copyright
+				display: block
+				float: none
+				width: 100%
+				margin-top: 20px
+
+			ul
+				text-align: center
+				li
+					&:first-child
+						margin-left: 20px
+				
+			
+				
 				
 
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px)
-	/**/
+	.s
+		&-testimonials
+			height: 540px
+
+			.testim-title
+				height: 80px
+				font-size: 50px
+
+			.carousel-indicators
+				li
+					width: 30px
+					height: 30px
+					margin: 0 5px
 
 
 /* Custom, iPhone Retina */
