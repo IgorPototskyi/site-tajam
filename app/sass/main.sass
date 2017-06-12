@@ -23,8 +23,6 @@ html, body
 
 body
 	font-size: 14px
-	// min-width: 600px
-	// min-height: 600px
 	position: relative
 	line-height: 1.75
 	font-family: $default-font
@@ -130,8 +128,8 @@ body
 .navbar-default .navbar-nav>.active>a:focus, 
 .navbar-default .navbar-nav>.active>a:hover
     background-color: transparent
-
-section, footer
+		
+.s	
 	position: relative
 	background-color: $dark
 	color: $accent
@@ -152,9 +150,8 @@ section, footer
 			left: 0
 			width: 100%
 			height: 100%
-			background-color: rgba($overlay, .85)			
+			background-color: rgba($overlay, .85)
 
-.s
 	&-welcome
 		height: 100vh
 		// height: 670px
@@ -163,11 +160,7 @@ section, footer
 		.welcome-carousel
 			position: relative
 			height: 100%
-			// position: absolute
-			// top: 50%
-			// transform: translateY(-50%)
 			text-align: center
-			// height: 300px
 
 		.carousel-indicators
 			bottom: 20px
@@ -179,6 +172,7 @@ section, footer
 			position: absolute
 			top: 50%
 			transform: translateY(-50%)
+			height: 320px
 
 			.welcome-item-title
 				font-size: 32px
@@ -324,26 +318,35 @@ section, footer
 	&-testimonials
 		background-image: url("../img/bg-testimonials.jpg")
 		height: 500px
-		padding: 20px 0
-
-		.testim-title
-			font-size: 100px
-			text-align: center
-			height: 140px
+		padding: 0 0 20px
 
 		.testim-carousel
 			position: relative
 			height: 100%
 			text-align: center
 
+			blockquote
+				border: none
+
+			.testim-title
+				font-size: 100px
+				text-align: center
+				height: 140px
+
 			.testim-item-text
 				font-family: playfair
 				font-size: 16px
 
-			.testim-item-name
-				margin-top: 50px
-				font-weight: 900
+			.testim-item-name, .testim-item-position
+				font-style: normal
+				text-transform: uppercase
 
+			.testim-item-name
+				display: block
+				margin-top: 40px
+				font-weight: 900
+				font-size: 14px
+				
 			.testim-item-position
 				font-weight: 300
 				font-size: 13px
@@ -418,6 +421,12 @@ section, footer
 
 	.footer-tel
 		margin-top: 20px
+		a
+			text-decoration: none
+			color: $accent
+			transition: color .3s ease
+			&:hover
+				color: $hover
 
 	.footer-addr, .footer-tel
 		.fa
@@ -459,6 +468,7 @@ section, footer
 				border-radius: 50%
 				text-align: center
 				margin: 3px
+				transition: background-color .3s ease
 				a
 					display: inline-block
 					width: 35px
@@ -466,7 +476,7 @@ section, footer
 					line-height: 35px
 					font-size: 16px
 					color: $accent
-
+					
 				&:hover
 					background-color: $hover
 
