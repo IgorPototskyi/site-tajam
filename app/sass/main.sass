@@ -37,6 +37,28 @@ body
 	textarea:required:valid
 		color: #666
 
+.preloader
+	position: fixed
+	top: 0
+	bottom: 0
+	right: 0
+	left: 0
+	z-index: 100
+	background: $accent
+	&-inner
+		position: absolute
+		top: 50%
+		left: 50%
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		background-image: url("../img/loader.gif")
+		background-repeat: no-repeat
+		background-position: center center
+		background-color: #fff
+
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -63,7 +85,6 @@ body
 	&:hover
 		color: $hover
 		border: 1px solid  $hover
-
 
 .title
 	font-family: playfair
@@ -117,12 +138,16 @@ body
 
 .navbar-toggle
 	border: 1px solid $active
-	transition: all .3s ease
-	&:hover
-		background-color: rgba($overlay, .85)
-
+	transition: border .3s ease
+	
 	span
 		background-color: $active
+		transition: background-color 1s ease
+	
+	&:hover
+		border: 1px solid $hover
+		span
+			background-color: $hover
 
 .navbar-default .navbar-nav>.active>a, 
 .navbar-default .navbar-nav>.active>a:focus, 
@@ -308,6 +333,12 @@ body
 			display: flex
 			flex-flow: row wrap
 			justify-content: center
+
+		.container-item
+			margin: 5px
+			transition: transform .3s ease
+			&:hover
+				transform: scale(1.05)
 		
 		.works-footer
 			position: relative

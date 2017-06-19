@@ -20,7 +20,7 @@ gulp.task('common-js', function() {
 		'app/js/common.js',
 		])
 	.pipe(concat('common.min.js'))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(gulp.dest('app/js'));
 });
 
@@ -28,6 +28,10 @@ gulp.task('js', ['common-js'], function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/bootstrap/js/bootstrap.min.js',
+		'app/libs/lightgallery/js/lightgallery.min.js',
+		// 'app/libs/lightgallery/js/lg-thumbnail.min.js',
+		// 'app/libs/lightgallery/js/lg-fullscreen.min.js',
+
 		'app/js/common.min.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))
