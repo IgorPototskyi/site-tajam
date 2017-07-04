@@ -17,6 +17,8 @@ $(function() {
 	// 	animateThumb: false,
 	// }); 
 	lightGallery(document.getElementById('lightgallery')); 
+
+	new WOW().init();
 });
 
 // ----- Preloader

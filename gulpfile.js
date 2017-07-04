@@ -29,6 +29,7 @@ gulp.task('js', ['common-js'], function() {
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/bootstrap/js/bootstrap.min.js',
 		'app/libs/lightgallery/js/lightgallery.min.js',
+		'app/libs/wow/js/wow.min.js',
 		// 'app/libs/lightgallery/js/lg-thumbnail.min.js',
 		// 'app/libs/lightgallery/js/lg-fullscreen.min.js',
 

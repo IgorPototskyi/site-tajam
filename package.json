@@ -1,12 +1,12 @@
 {
-  "name": "optimizedhtml",
+  "name": "tajam",
   "version": "2.0.1",
   "description": "OptimizedHTML - Start HTML Template",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "WebDesign Master",
+  "author": "Ihor Pototskyi",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.11",
